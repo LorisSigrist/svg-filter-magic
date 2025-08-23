@@ -1,0 +1,16 @@
+<svg>      
+    <defs> 
+        <filter id="my-filter" width="100%" height="100%">
+            <!-- Blur by 5 px-->
+            <feGaussianBlur in="SourceGraphic" stdDeviation="5" />
+
+            <!-- Swap Red and Green Color Channels -->
+            <feColorMatrix
+                type="matrix"
+                values="0 0 1 0 0
+                        0 1 0 0 0
+                        1 0 0 0 0
+                        0 0 0 1 0" />
+        </filter>
+    </defs>
+</svg>
