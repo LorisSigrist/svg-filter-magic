@@ -4,18 +4,19 @@
             <!-- Blur by 5 px-->
             <feGaussianBlur in="SourceGraphic" stdDeviation="5" result="blurred" />
 
-            <!-- Swap Red and Green Color Channels -->
+            <!-- Swap Red and Blue Color Channels -->
             <feColorMatrix
                 type="matrix"
                 result="blurred-and-swapped"
                 values="..." />
 
-            <!-- Add the previous two steps -->
+            <!-- Add the two intermediate results -->
             <feComposite 
                 in="blurred" 
                 in2="blurred-and-swapped" 
                 operator="lighter"
             />
+            <!-- ꜛꜛꜛ The last Primitive is the result of the entire Filter -->
         </filter>
     </defs>
 </svg>

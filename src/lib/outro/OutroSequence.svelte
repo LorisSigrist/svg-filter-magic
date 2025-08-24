@@ -16,7 +16,7 @@
 				class="h-48 w-48 rounded-md"
 			/>
 			<div class="text-left">
-				<h2>More Code & Demos</h2>
+				<h2>Code & More Demos</h2>
 				<span >github.com/LorisSigrist/awesome-svg-filters</span>
 			</div>
 		</div>

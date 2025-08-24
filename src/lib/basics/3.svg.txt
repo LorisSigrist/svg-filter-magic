@@ -4,13 +4,14 @@
             <!-- Blur by 5 px-->
             <feGaussianBlur in="SourceGraphic" stdDeviation="5" />
 
-            <!-- Swap Red and Green Color Channels -->
+            <!-- Swap Red and Blue Color Channels -->
             <feColorMatrix
                 type="matrix"
                 values="0 0 1 0 0
                         0 1 0 0 0
                         1 0 0 0 0
                         0 0 0 1 0" />
+            <!-- ꜛꜛꜛ The last Primitive is the result of the entire Filter -->
         </filter>
     </defs>
 </svg>

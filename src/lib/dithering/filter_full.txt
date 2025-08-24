@@ -1,0 +1,45 @@
+<svg>
+    <defs>
+        <filter id="dithering">
+            <!-- Grayscale the source image -->
+            <feColorMatrix 
+                in="SourceGraphic" 
+                type="matrix" 
+                values="
+                        0.299 0.587 0.114 0 0
+                        0.299 0.587 0.114 0 0
+                        0.299 0.587 0.114 0 0
+                        0     0     0     1 0" 
+                result="grayscale"
+            />
+
+            <!-- Load a single Tile of the Dithering Pattern -->
+            <feImage 
+                href="bayer3.png" 
+                width="16" 
+                height="16" 
+                image-rendering="pixelated" 
+                result="tile"
+            />
+
+            <!-- Tile the entire image with the Dithering Pattern-->
+            <feTile in="tile" result="pattern" />
+
+            <!-- Add the Dithering pattern to the grayscale image -->
+            <feComposite 
+                in="grayscale" 
+                in2="pattern" 
+                operator="arithmetic" 
+                k1="0" k2="1" k3="1" k4="0"
+                result="sum"
+            />
+
+            <!-- Apply 50% threshold to create black and white output -->
+            <feComponentTransfer in="sum">
+                <feFuncR type="discrete" tableValues="0 1" />
+                <feFuncG type="discrete" tableValues="0 1" />
+                <feFuncB type="discrete" tableValues="0 1" />
+            </feComponentTransfer>
+        </filter>
+    </defs>
+</svg>

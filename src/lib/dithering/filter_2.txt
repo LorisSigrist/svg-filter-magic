@@ -1,0 +1,16 @@
+<filter id="dithering">
+    <!-- Grayscale the source image -->
+    <feColorMatrix ... result="grayscale"/>
+
+    <!-- Load and Tile The Dithering Pattern -->
+    <feImage 
+        href="bayer3.png" 
+        width="16" 
+        height="16" 
+        image-rendering="pixelated" 
+        result="tile"
+    />
+    <feTile in="tile" result="pattern" />
+
+    ...
+</filter>

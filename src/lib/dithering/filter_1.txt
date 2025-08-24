@@ -1,0 +1,6 @@
+<filter id="dithering">
+    <!-- Grayscale the source image -->
+    <feColorMatrix in="SourceGraphic" type="saturate" values="0" result="grayscale"/>
+
+    ...
+</filter>

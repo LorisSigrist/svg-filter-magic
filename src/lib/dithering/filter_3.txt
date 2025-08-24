@@ -1,0 +1,18 @@
+<filter id="dithering">
+    <!-- Grayscale the source image -->
+    <feColorMatrix ... result="grayscale" />
+
+    <!-- Load and Tile The Dithering Pattern -->
+    <feImage ... />
+    <feTile ... result="pattern" />
+
+    <!-- Add the Lightness of the pattern to the grayscale image -->
+    <feComposite 
+        in="grayscale" 
+        in2="pattern" 
+        operator="arithmetic" 
+        k1="0" k2="1" k3="0.5" k4="-0.25"
+        result="sum"
+    />
+    ...
+</filter>
