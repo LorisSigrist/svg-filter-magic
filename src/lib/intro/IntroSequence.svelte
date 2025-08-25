@@ -13,9 +13,3 @@
 <Slide transition="slide" class="h-full w-full">
     <WhatAreSvgFilters />
 </Slide>
-
-<!--
-<Slide transition="slide" class="h-full w-full">
-    <TableOfContents />
-</Slide>
--->

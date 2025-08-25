@@ -18,6 +18,5 @@
 	<IntroSequence />
 	<BasicsSequence />
 	<GlitchSequence />
-	<DitheringSequence />
 	<OutroSequence />
 </Presentation>

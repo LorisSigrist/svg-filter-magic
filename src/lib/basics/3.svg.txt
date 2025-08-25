@@ -1,6 +1,6 @@
 <svg>      
     <defs> 
-        <filter id="my-filter" width="100%" height="100%">
+        <filter id="my-filter">
             <!-- Blur by 5 px-->
             <feGaussianBlur in="SourceGraphic" stdDeviation="5" />
 
