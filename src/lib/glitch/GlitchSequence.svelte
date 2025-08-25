@@ -22,7 +22,7 @@
 
 <Slide class="grid h-full w-full place-items-center p-32">
 	<label>
-		<span>Chromatic Abberation</span> <br />
+		<span>Chromatic Aberration</span> <br />
 		<input type="range" min="0" max="10" step="1" bind:value={staticAbberationScale} />
 	</label>
 	<img
