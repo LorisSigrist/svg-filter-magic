@@ -1,24 +1,69 @@
 <script>
 	import { Slide } from '@animotion/core'
-	import GlitchFilter from './GlitchFilter.svelte'
-	
+	import GlitchFilterDisplacement from './GlitchFilterDisplacement.svelte'
+	import GlitchFilterNoise from './GlitchFilterNoise.svelte'
+
+	import pipeline from './pipeline.svg'
+	import david from './hackerman.webp'
+
 	// Scale factor for glitch displacement - adjust this to control intensity
-	const glitchScale = 3
-	const filterId = 'glitch'
+	const displacementFilterId = 'glitch-displacement'
+	const noiseFilterId = 'glitch-noise'
+
+	let staticAbberationScale = $state(0)
 </script>
 
-<style>
-	button {
-		filter: url(#glitch);
-	}
-</style>
+<Slide class="grid h-full w-full place-items-center p-32">
+	<label>
+		<span>Chromatic Abberation</span> <br />
+		<input type="range" min="0" max="10" step="1" bind:value={staticAbberationScale} />
+	</label>
+	<img
+		src={david}
+		alt="Dithered David"
+		style="image-rendering: pixelated; filter: url(#static-abberation);"
+		class="h-96 rounded-lg shadow-2xl"
+	/>
+
+	<GlitchFilterDisplacement glitchScale={staticAbberationScale} id="static-abberation" />
+</Slide>
+<Slide class="grid h-full w-full place-items-center p-32">
+	<img src={pipeline} alt="Glitch Pipeline" class="object-fit h-full w-full object-center" />
+</Slide>
+
 
 <Slide class="grid h-full w-full place-items-center p-32">
-	<button 
-		class="px-12 py-6 text-4xl font-mono font-bold bg-black text-green-400 border-2 border-green-400 hover:bg-green-400 hover:text-black transition-colors duration-200 tracking-wider uppercase shadow-lg shadow-green-400/20 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-400"
+	<img
+		src={david}
+		alt="Dithered David"
+		style="image-rendering: pixelated; filter: url(#{displacementFilterId});"
+		class="h-96 rounded-lg shadow-2xl"
+	/>
+
+	<button
+		style="filter: url(#{displacementFilterId});"
+		class="border-2 border-gray-200 bg-black px-12 py-6 font-mono text-4xl font-bold tracking-wider text-gray-200 uppercase shadow-lg shadow-gray-200/20 transition-colors duration-200 hover:bg-gray-200 hover:text-black focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-200"
 	>
 		BUTTON
 	</button>
 
-	<GlitchFilter {glitchScale} id={filterId} />
+	<GlitchFilterDisplacement animate glitchScale={3} id={displacementFilterId} />
+</Slide>
+
+<Slide class="grid h-full w-full place-items-center p-32">
+	<img
+		src={david}
+		alt="Dithered David"
+		style="image-rendering: pixelated; filter: url(#{noiseFilterId});"
+		class="h-96 rounded-lg shadow-2xl"
+	/>
+
+	<button
+		style="filter: url(#{noiseFilterId});"
+		class="border-2 border-gray-200 bg-black px-12 py-6 font-mono text-4xl font-bold tracking-wider text-gray-200 uppercase shadow-lg shadow-gray-200/20 transition-colors duration-200 hover:bg-gray-200 hover:text-black focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-200"
+	>
+		BUTTON
+	</button>
+
+	<GlitchFilterNoise glitchScale={15} id={noiseFilterId} />
 </Slide>
