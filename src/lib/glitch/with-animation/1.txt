@@ -1,0 +1,3 @@
+<feOffset in="red"   result="red-shifted"   dx="10"  dy="0" />
+<feOffset in="green" result="green-shifted" dx="-3"  dy="0" />
+<feOffset in="blue"  result="blue-shifted"  dx="-20" dy="0" />

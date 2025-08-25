@@ -1,0 +1,7 @@
+<svg>
+    <defs>
+        <filter id="glitch">
+            ...
+        </filter>
+    </defs>
+</svg>

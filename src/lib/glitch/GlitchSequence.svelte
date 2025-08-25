@@ -4,13 +4,20 @@
 	import GlitchFilterNoise from './GlitchFilterNoise.svelte'
 
 	import pipeline from './pipeline.svg'
-	import david from './hackerman.webp'
+	import hackerman from './hackerman.webp'
+	import CodeWalkthoughSlide from './CodeWalkthoughSlide.svelte'
 
 	// Scale factor for glitch displacement - adjust this to control intensity
 	const displacementFilterId = 'glitch-displacement'
 	const noiseFilterId = 'glitch-noise'
 
 	let staticAbberationScale = $state(0)
+
+	const walkthroughModules = import.meta.glob('./walkthrough/*.txt', { query: '?raw', eager: true })
+	const animationModules = import.meta.glob('./with-animation/*.txt', {
+		query: '?raw',
+		eager: true
+	})
 </script>
 
 <Slide class="grid h-full w-full place-items-center p-32">
@@ -19,23 +26,37 @@
 		<input type="range" min="0" max="10" step="1" bind:value={staticAbberationScale} />
 	</label>
 	<img
-		src={david}
-		alt="Dithered David"
+		src={hackerman}
+        alt=""
 		style="image-rendering: pixelated; filter: url(#static-abberation);"
 		class="h-96 rounded-lg shadow-2xl"
 	/>
 
 	<GlitchFilterDisplacement glitchScale={staticAbberationScale} id="static-abberation" />
 </Slide>
+
 <Slide class="grid h-full w-full place-items-center p-32">
 	<img src={pipeline} alt="Glitch Pipeline" class="object-fit h-full w-full object-center" />
 </Slide>
-
+<CodeWalkthoughSlide lang="html" modules={walkthroughModules} />
 
 <Slide class="grid h-full w-full place-items-center p-32">
 	<img
-		src={david}
-		alt="Dithered David"
+		src={hackerman}
+		alt=""
+		style="image-rendering: pixelated; filter: url(#static-abberation-2);"
+		class="h-96 rounded-lg shadow-2xl"
+	/>
+
+	<GlitchFilterDisplacement glitchScale={5} id="static-abberation-2" />
+</Slide>
+
+<CodeWalkthoughSlide lang="html" modules={animationModules} />
+
+<Slide class="grid h-full w-full place-items-center p-32">
+	<img
+		src={hackerman}
+		alt=""
 		style="image-rendering: pixelated; filter: url(#{displacementFilterId});"
 		class="h-96 rounded-lg shadow-2xl"
 	/>
@@ -52,8 +73,8 @@
 
 <Slide class="grid h-full w-full place-items-center p-32">
 	<img
-		src={david}
-		alt="Dithered David"
+		src={hackerman}
+		alt=""
 		style="image-rendering: pixelated; filter: url(#{noiseFilterId});"
 		class="h-96 rounded-lg shadow-2xl"
 	/>

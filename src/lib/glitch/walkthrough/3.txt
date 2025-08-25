@@ -1,0 +1,6 @@
+<filter id="glitch">
+    <feComponentTransfer in="SourceGraphic" result="red"> ... </feComponentTransfer>
+    <feComponentTransfer in="SourceGraphic" result="green">...</feComponentTransfer>
+    <feComponentTransfer in="SourceGraphic" result="blue"> ...</feComponentTransfer>
+</filter>
+

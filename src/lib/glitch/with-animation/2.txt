@@ -1,0 +1,15 @@
+<feOffset in="red" result="red-shifted" dx="0" dy="0">
+    <animate
+        attributeName="dx"
+        values="0;0;0;6;0;0;-3;0;0;0;0;3;0;0;0;-6;0;0;0;3;0;0;0;0"
+        dur="3.0s"
+        repeatCount="indefinite"
+        calcMode="discrete"
+    />
+</feOffset>
+<feOffset in="green" result="green-shifted" dx="0"  dy="0">
+    <animate attributeName="dx" ... />
+</feOffset>
+<feOffset in="blue"  result="blue-shifted"  dx="0" dy="0">
+    <animate attributeName="dx" ... />
+</feOffset>

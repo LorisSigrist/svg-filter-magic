@@ -1,0 +1,16 @@
+<filter id="glitch">
+    <feComponentTransfer in="SourceGraphic" result="red"> ... </feComponentTransfer>
+    <feComponentTransfer in="SourceGraphic" result="green">...</feComponentTransfer>
+    <feComponentTransfer in="SourceGraphic" result="blue"> ...</feComponentTransfer>
+
+    <feOffset in="red"   result="red-shifted"   dx="10"  dy="0" />
+    <feOffset in="green" result="green-shifted" dx="-3"  dy="0" />
+    <feOffset in="blue"  result="blue-shifted"  dx="-20" dy="0" />
+
+    <feComposite 
+        in="red-shifted" in2="green-shifted"
+        result="red-n-green"
+        operator="arithmetic" k1="0" k2="1" k3="1" k4="0"
+    />
+    <feComposite in="red-n-green" in2="blue-shifted" ... />
+</filter>

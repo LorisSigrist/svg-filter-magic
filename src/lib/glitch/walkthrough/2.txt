@@ -1,0 +1,8 @@
+<filter id="glitch">
+    <feComponentTransfer in="SourceGraphic" result="red">
+        <feFuncR type="identity" />
+        <feFuncG type="discrete" tableValues="0" />
+        <feFuncB type="discrete" tableValues="0" />
+        <feFuncA type="identity" />
+    </feComponentTransfer>
+</filter>
