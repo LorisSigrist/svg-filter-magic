@@ -4,7 +4,7 @@
 
 	let animateElement: SVGAnimateElement | null = null
 	let fadeElement: SVGAnimateElement | null = null
-	let isModalOpen = $state(false)
+	let isModalOpen = $state(true)
 	let bigNoiseSeed = $state(1)
 	let fineNoiseSeed = $state(2)
 
@@ -85,7 +85,7 @@
 						onclick={closeModal}
 						class="w-full rounded-lg bg-red-600 px-4 py-2 font-medium text-white transition-colors duration-200 hover:bg-red-700"
 					>
-						Dissolve Away
+						BEGONE
 					</button>
 				</div>
 			</div>

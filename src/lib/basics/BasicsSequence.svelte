@@ -57,7 +57,7 @@
 	</div>
 </Slide>
 
-<Slide class="grid h-full w-full place-items-center">
+<Slide transition="fade" class="grid h-full w-full place-items-center">
 	<img
 		src={mdn_filter_primitives}
 		alt=""
@@ -65,7 +65,7 @@
 	/>
 </Slide>
 
-<Slide class="grid h-full w-full place-items-center">
+<Slide transition="none" class="grid h-full w-full place-items-center">
 	<div>
 		<h1 class="font-mono">{`<feColorMatrix />`}</h1>
 		<p>Perform Linear Transformations on RGBA colors</p>
@@ -86,7 +86,7 @@
 	</div>
 </Slide>
 
-<Slide class="grid h-full w-full place-items-center">
+<Slide transition="none" class="grid h-full w-full place-items-center">
 	<div>
 		<h1 class="font-mono">{`<feConvolveMatrix />`}</h1>
 		<p>Won't Explain - If you know you know</p>
@@ -106,7 +106,7 @@
 	</div>
 </Slide>
 
-<Slide class="grid h-full w-full place-items-center">
+<Slide transition="none" class="grid h-full w-full place-items-center">
 	<div>
 		<h1 class="font-mono">{`<feComposite />`}</h1>
 		<p>Combine two Images into one</p>
@@ -125,7 +125,7 @@
 	</div>
 </Slide>
 
-<Slide class="grid h-full w-full place-items-center">
+<Slide transition="none" class="grid h-full w-full place-items-center">
 	<div>
 		<h1 class="font-mono">{`<feComponentTransfers />`}</h1>
 		<p>Do math on RGBA channels (separately)</p>
