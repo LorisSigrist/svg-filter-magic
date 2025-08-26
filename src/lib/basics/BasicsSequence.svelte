@@ -1,17 +1,14 @@
 <script lang="ts">
-	import { Action, Code, Slide } from '@animotion/core'
-	import one from './1.svg.txt?raw'
-	import two from './2.svg.txt?raw'
-	import three from './3.svg.txt?raw'
-	import four from './4.svg.txt?raw'
+	import { Code, Slide } from '@animotion/core'
 
-	import graph from './Graph2.svg'
 	import mdn_filter_primitives from './mdn_filter_primitives.png'
-	import combining_primitives from './combining-primitives.svg'
 	import mental_model from './mental-model.svg'
+	import SvgfmSlide from './SVGFMSlide.svelte'
 
 	let code: ReturnType<typeof Code>
 </script>
+
+<SvgfmSlide />
 
 <Slide class="grid h-full w-full place-items-center">
 	<div class="text-left">
