@@ -1,6 +1,7 @@
 <script>
 	import { scale } from 'svelte/transition'
 	import { dissolve } from './ordered-dissolve.js'
+	import lisa from './mona_lisa.jpg'
 	
 	let isModalOpen = $state(false)
 	
@@ -23,30 +24,24 @@
 	<!-- Trigger button -->
 	<button
 		onclick={openModal}
-		class="px-8 py-4 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors duration-200 font-semibold shadow-lg text-xl"
+		class="px-8 py-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-200 font-semibold shadow-lg text-xl border-0"
 	>
-		Open Modal
+		Show
 	</button>
 
 	<!-- Modal overlay -->
 	{#if isModalOpen}
 		<div class="fixed inset-0 flex items-center justify-center z-50">
-			<!-- Modal content with dissolve transition -->
-			<div
-				class="bg-white rounded-xl p-8 max-w-lg w-full mx-4 shadow-2xl"
-                in:scale={{ duration: 300, opacity: 0.5 }}
+			<!-- svelte-ignore a11y_click_events_have_key_events -->
+			<!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
+			<img
+				src={lisa}
+				alt="Mona Lisa"
+				class="h-96 rounded-lg shadow-2xl cursor-pointer"
+				in:scale={{ duration: 300, opacity: 0.5 }}
 				out:dissolve={{ duration: 500, pattern: "blue-noise" }}
-			>
-				<h2 class="text-3xl font-bold text-gray-800 mb-6">Dissolving Modal</h2>
-				<div class="flex gap-3">
-					<button
-						onclick={closeModal}
-						class="px-6 py-3 w-full bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors duration-200 font-medium"
-					>
-						Dissolve Away
-					</button>
-				</div>
-			</div>
+				onclick={closeModal}
+			/>
 		</div>
 	{/if}
 </div>

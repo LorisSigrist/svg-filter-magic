@@ -1,10 +1,11 @@
 <script lang="ts">
 	import { Slide } from '@animotion/core'
 	import { tick } from 'svelte'
+	import lisa from './mona_lisa.jpg'
 
 	let animateElement: SVGAnimateElement | null = null
 	let fadeElement: SVGAnimateElement | null = null
-	let isModalOpen = $state(true)
+	let isModalOpen = $state(false)
 	let bigNoiseSeed = $state(1)
 	let fineNoiseSeed = $state(2)
 
@@ -66,29 +67,23 @@
 	<!-- Trigger button -->
 	<button
 		onclick={openModal}
-		class="rounded-lg bg-blue-600 px-6 py-3 font-semibold text-white shadow-lg transition-colors duration-200 hover:bg-blue-700"
+		class="px-8 py-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-200 font-semibold shadow-lg text-xl border-0"
 	>
-		Open Modal
+		Show
 	</button>
 
 	<!-- Modal overlay -->
 	{#if isModalOpen}
-		<div class="bg-opacity-50 fixed inset-0 z-50 flex items-center justify-center">
-			<!-- Modal content with dissolve filter -->
-			<div
-				class="mx-4 w-full max-w-md rounded-xl bg-white p-8 shadow-2xl"
+		<div class="fixed inset-0 z-50 flex items-center justify-center">
+			<!-- svelte-ignore a11y_click_events_have_key_events -->
+			<!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
+			<img
+				src={lisa}
+				alt="Mona Lisa"
+				class="h-96 rounded-lg shadow-2xl cursor-pointer"
 				style="filter: url(#dissolve-filter)"
-			>
-				<h2 class="mb-4 text-2xl font-bold text-gray-800">Some annoying Modal</h2>
-				<div class="flex gap-3">
-					<button
-						onclick={closeModal}
-						class="w-full rounded-lg bg-red-600 px-4 py-2 font-medium text-white transition-colors duration-200 hover:bg-red-700"
-					>
-						BEGONE
-					</button>
-				</div>
-			</div>
+				onclick={closeModal}
+			/>
 		</div>
 	{/if}
 
