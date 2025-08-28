@@ -10,13 +10,14 @@
 </script>
 
 <Presentation options={{ history: true, transition: 'slide', controls: true, progress: true }}>
-	<CompositingSequence />
 	<IntroSequence />
 	<BasicsSequence />
 	<Slide class="grid h-full w-full place-items-center p-16">
 		<h1>Let's do an Example</h1>
 	</Slide>
 	<GlitchSequence />
+	<CompositingSequence />
+
 	<TransitionsSequence />
 	<DisplacementSequence />
 	<OutroSequence />

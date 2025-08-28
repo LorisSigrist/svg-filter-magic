@@ -10,6 +10,7 @@
 
 <SvgfmSlide />
 
+<!--
 <Slide class="grid h-full w-full place-items-center">
 	<div class="text-left">
 		<h1>How to SVG Filter</h1>
@@ -26,6 +27,7 @@
 		</ol>
 	</div>
 </Slide>
+
 
 <Slide class="grid h-full w-full place-items-center p-16">
 	<img
@@ -140,33 +142,5 @@
 			/>
 		</div>
 	</div>
-</Slide>
-
-<!--
-<Slide class="grid h-full w-full place-items-center">
-	<div>
-		<Code bind:this={code} lang="html" theme="poimandres" code={one} class="h-full w-full" />
-	</div>
-
-	<Action
-		do={() => {
-			code.update`${two}`
-		}}
-		undo={() => code.update`${one}`}
-	/>
-
-	<Action
-		do={() => {
-			code.update`${three}`
-		}}
-		undo={() => code.update`${two}`}
-	/>
-
-	<Action
-		do={() => {
-			code.update`${four}`
-		}}
-		undo={() => code.update`${three}`}
-	/>
 </Slide>
 -->
