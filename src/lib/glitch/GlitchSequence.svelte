@@ -1,5 +1,5 @@
 <script>
-	import { Slide } from '@animotion/core'
+	import { Code, Slide } from '@animotion/core'
 	import GlitchFilterDisplacement from './GlitchFilterDisplacement.svelte'
 	import GlitchFilterNoise from './GlitchFilterNoise.svelte'
 
@@ -15,6 +15,11 @@
 
 	const walkthroughModules = import.meta.glob('./walkthrough/*.txt', { query: '?raw', eager: true })
 	const animationModules = import.meta.glob('./with-animation/*.txt', {
+		query: '?raw',
+		eager: true
+	})
+
+    const displacementModules = import.meta.glob('./with-displacement/*.txt', {
 		query: '?raw',
 		eager: true
 	})
@@ -70,6 +75,8 @@
 
 	<GlitchFilterDisplacement animate glitchScale={3} id={displacementFilterId} />
 </Slide>
+
+<CodeWalkthoughSlide lang="html" modules={displacementModules} />
 
 <Slide class="grid h-full w-full place-items-center p-32">
 	<img

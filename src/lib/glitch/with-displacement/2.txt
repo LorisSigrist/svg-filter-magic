@@ -1,0 +1,16 @@
+<feTurbulence
+	type="fractalNoise"
+	baseFrequency="0.01 1"
+	numOctaves="1" seed="1"
+    result="noise"
+/>
+
+<feOffset in="red" result="red-shifted" dx="0" dy="0">
+    <animate attributeName="dx" ... />
+</feOffset>
+<feOffset in="green" result="green-shifted" dx="0"  dy="0">
+    <animate attributeName="dx" ... />
+</feOffset>
+<feOffset in="blue"  result="blue-shifted"  dx="0" dy="0">
+    <animate attributeName="dx" ... />
+</feOffset>

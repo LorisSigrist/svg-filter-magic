@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        img {
+            position: fixed;
+            inset: 0;
+            object-fit: cover;
+
+            width: 100%;
+            ;
+        }
+
+        svg {
+            position: fixed;
+            left: 100%;
+        }
+
+        .cursor {
+            position: fixed;
+            width: 300px;
+            height: 200px;
+            top: 0;
+            left: 0;
+            transform: translate(-50%, -50%);
+
+            backdrop-filter: url(#liquid-glass);
+
+            border: 1px solid #cccccccc;
+            border-radius: 100px;
+            pointer-events: none;
+        }
+    </style>
+
+     <script type="module">
+        const cursor = document.querySelector('.cursor');
+
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+        });
+    </script>
+</head>
+
+<body>
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <defs>
+            <filter id="liquid-glass">
+                <feImage href="./displacement.png" result="displacementMap" />
+                <feDisplacementMap in="SourceGraphic" in2="displacementMap" scale="50" xChannelSelector="R"
+                    yChannelSelector="G" />
+            </filter>
+        </defs>
+    </svg>
+
+    <img src="./background.png" alt="Background Image">
+    <div class="cursor"></div>
+</body>
+
+</html>

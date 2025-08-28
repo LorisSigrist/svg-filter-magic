@@ -68,14 +68,6 @@
 				{/if}
 			</feOffset>
 
-			<feTurbulence
-				type="fractalNoise"
-				baseFrequency="0.01 1"
-				numOctaves="1"
-				seed="1"
-				result="noise"
-			></feTurbulence>
-
 			<feComposite
 				in="red-offset"
 				in2="green-offset"
