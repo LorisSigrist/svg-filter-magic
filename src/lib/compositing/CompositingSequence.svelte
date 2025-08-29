@@ -2,6 +2,8 @@
 	import { Slide } from '@animotion/core'
 	import mesh_gradient from './mesh-gradient.avif'
     import grain_graph from './grain-graph.svg'
+	import mona_lisa from '../intro/mona_lisa.jpg'
+	import Sepia from './Sepia.svelte'
 
 	let noiseStrenght = $state(3)
 	let animateNoise = $state(false)

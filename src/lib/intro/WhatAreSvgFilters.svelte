@@ -90,7 +90,7 @@
 
 <div class="p-24 h-full w-full flex flex-col items-center justify-center gap-16 text-center">
 	<div class="flex flex-row items-center justify-center gap-32">
-		<h1 style="filter: {filter}">CSS Filters</h1>
+		<h1 style="filter: {filter}">What are "Filters"?</h1>
 		<img
 			class="w-72 max-w-full rounded-lg "
 			style="filter: {filter}"

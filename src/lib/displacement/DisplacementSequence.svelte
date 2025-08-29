@@ -11,6 +11,7 @@
     import liquid_glass from "./Liquid Glass.webp";
     import lens_graph from "./lens.svg";
 	import LiquidGlassSlide from "./LiquidGlassSlide.svelte"
+	import GenieSlide from "./GenieSlide.svelte"
 
 
 </script>
@@ -68,3 +69,4 @@
 
 <!-- Genie Sequence -->
 
+<GenieSlide />
