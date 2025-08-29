@@ -25,9 +25,9 @@
 	<Slide class="grid h-full w-full place-items-center p-16">
 		<div class="text-left">
 			<h1>Let's Recap</h1>
-			<p>1. Implement effects by arranging Primitive Filters in a Graph</p>
-			<p>2. Put that SVG file on your Site</p>
-			<p>3. Use it from CSS using `filter: url()`</p>
+			<p>1. Filters do <i>Post Processing</i></p>
+			<p>2. Affects are implemented by arranging Primitive Filters in a Graph</p>
+			<p>4. Use filters from CSS using <code class="text-nowrap">filter: url(/url/to/file.svg#name)</code></p>
 		</div>
 	</Slide>
 
